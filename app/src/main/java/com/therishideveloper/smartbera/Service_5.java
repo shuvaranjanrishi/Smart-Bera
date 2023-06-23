@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.AdView;
 
 public class Service_5 extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class Service_5 extends AppCompatActivity {
     ImageView back;
     LottieAnimationView Fire1, Fire2, Fire3;
 
-    AdView mAdView;
+//    AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

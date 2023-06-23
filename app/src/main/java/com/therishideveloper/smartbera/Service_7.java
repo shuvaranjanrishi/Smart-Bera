@@ -14,10 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.google.android.gms.ads.AdView;
+//import com.google.android.gms.ads.AdView;
 
 public class Service_7 extends AppCompatActivity {
-    AdView mAdView;
+//    AdView mAdView;
 
     public String num = "";
     ImageView back;
