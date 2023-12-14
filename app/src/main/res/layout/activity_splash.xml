@@ -4,22 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Splash"
     android:background="#FDFCFC"
-    >
+    tools:context=".Splash">
 
     <ImageView
-        android:id="@+id/b_logo"
+        android:id="@+id/logoIv"
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:layout_marginTop="150dp"
-        android:src="@drawable/logosb"
-
-        />
-
+        android:src="@drawable/logosb" />
 
     <ProgressBar
-        android:id="@+id/pro"
+        android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -27,9 +23,5 @@
         android:layout_marginHorizontal="100dp"
         android:layout_marginBottom="170dp"
         android:progressTint="#3F51B5" />
-
-
-
-
 
 </RelativeLayout>

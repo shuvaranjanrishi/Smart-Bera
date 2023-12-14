@@ -4,11 +4,11 @@
     <string name="open"></string>
     <string name="close"></string>
 
-<!--    <string name="Ads_Control_Url">https://www.linkedin.com/in/md-imran-hossain-82a494263/</string>-->
+    <!--    <string name="Ads_Control_Url">https://www.linkedin.com/in/md-imran-hossain-82a494263/</string>-->
 
-<!--    &lt;!&ndash; Admob APP ID HERE &ndash;&gt;-->
-<!--    <string name="admob_APP_ID">ca-app-pub-3940256099942544~3347511713</string>-->
-<!--    &lt;!&ndash; Admob Ad Unit IDS Here &ndash;&gt;-->
-<!--    <string name="admob_INTERSTITIAL_UNIT_ID">ca-app-pub-3940256099942544/1033173712</string>-->
-<!--    <string name="admob_BANNER_UNIT_ID">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--    &lt;!&ndash; Admob APP ID HERE &ndash;&gt;-->
+    <!--    <string name="admob_APP_ID">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--    &lt;!&ndash; Admob Ad Unit IDS Here &ndash;&gt;-->
+    <!--    <string name="admob_INTERSTITIAL_UNIT_ID">ca-app-pub-3940256099942544/1033173712</string>-->
+    <!--    <string name="admob_BANNER_UNIT_ID">ca-app-pub-3940256099942544/6300978111</string>-->
 </resources>
