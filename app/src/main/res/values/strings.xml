@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Smart Bera</string>
 
-    <string name="open"></string>
-    <string name="close"></string>
+    <string name="open" />
+    <string name="close" />
 
     <!--    <string name="Ads_Control_Url">https://www.linkedin.com/in/md-imran-hossain-82a494263/</string>-->
 
@@ -11,4 +11,20 @@
     <!--    &lt;!&ndash; Admob Ad Unit IDS Here &ndash;&gt;-->
     <!--    <string name="admob_INTERSTITIAL_UNIT_ID">ca-app-pub-3940256099942544/1033173712</string>-->
     <!--    <string name="admob_BANNER_UNIT_ID">ca-app-pub-3940256099942544/6300978111</string>-->
+
+    <!--Main Menu-->
+    <string name="cyber_bolling">সাইবার বুলিং</string>
+    <string name="female_torture">নারী নির্যাতন</string>
+    <string name="depression_and_emotional_release">হতাশা ও মানসিক মুক্তি</string>
+    <string name="carrier_thought">ক্যারিয়ার ভাবনা</string>
+    <string name="business_online_ad">ব্যবসাই অনলাইন প্রচারণা</string>
+    <string name="passed_ssc_hsc">SSC/HSC শেষ এখন কি করবো</string>
+    <string name="islamic_question">ইসলামিক জিজ্ঞাসা</string>
+    <string name="humanitarian_appeal">মানবিক আবেদন</string>
+    <string name="spoken_english">স্পোকেন ইংরেজি</string>
+    <string name="known_unknown_and_science">জানা অজানা ও বিজ্ঞান</string>
+    <string name="inspirational">অনুপ্রেরণা মূলক</string>
+    <string name="life_oriented_thinking">জীবনমুখী ভাবনা</string>
+    <string name="health_care">স্বাস্থ্য সেবা</string>
+
 </resources>
