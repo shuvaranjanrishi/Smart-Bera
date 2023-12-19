@@ -119,7 +119,7 @@ public class Service_2 extends AppCompatActivity {
 
     public void callPhoneNumber() {
         try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(Service_2.this, new String[]{Manifest.permission.CALL_PHONE}, 101);
                     return;
@@ -129,10 +129,6 @@ public class Service_2 extends AppCompatActivity {
                 callIntent.setData(Uri.parse("tel:" + num));
                 startActivity(callIntent);
 
-            } else {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + num));
-                startActivity(callIntent);
             }
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -17,6 +17,7 @@
     <string name="female_torture">নারী নির্যাতন</string>
     <string name="depression_and_emotional_release">হতাশা ও মানসিক মুক্তি</string>
     <string name="carrier_thought">ক্যারিয়ার ভাবনা</string>
+    <string name="university_admission">বিশ্ববিদ্যালয় ভর্তি</string>
     <string name="business_online_ad">ব্যবসাই অনলাইন প্রচারণা</string>
     <string name="passed_ssc_hsc">SSC/HSC শেষ এখন কি করবো</string>
     <string name="islamic_question">ইসলামিক জিজ্ঞাসা</string>
@@ -26,5 +27,25 @@
     <string name="inspirational">অনুপ্রেরণা মূলক</string>
     <string name="life_oriented_thinking">জীবনমুখী ভাবনা</string>
     <string name="health_care">স্বাস্থ্য সেবা</string>
+
+    <string name="news_paper">খবরের কাগজ</string>
+    <string name="blood_donor">ব্লাড ডোনার</string>
+    <string name="ambulance">এ্যাম্বুলেন্স</string>
+    <string name="doctor">ডাক্তার</string>
+    <string name="fire_service">ফায়ার সার্ভিস</string>
+    <string name="police">থানা পুলিশ</string>
+    <string name="electrician">ইলেকট্রিশিয়ান ও মিস্ত্রি</string>
+    <string name="journalist">সাংবাদিক</string>
+    <string name="electricity">পল্লী বিদ্যুৎ</string>
+    <string name="science_practice_foundation">বিজ্ঞান চর্চা ফাউন্ডেশন</string>
+    <string name="restaurant">রেস্টুরেন্ট</string>
+    <string name="bus_ticket">বাস টিকেট</string>
+    <string name="rail_ticket">রেল সেবা</string>
+    <string name="e_aid">ই-সেবা</string>
+    <string name="place_introduce">স্থান পরিচিতি</string>
+    <string name="house_rent">বাসা ভাড়া</string>
+    <string name="news_update">আপডেট নিউজ</string>
+    <string name="job_news">চাকরির খবর</string>
+    <string name="help_line">হেল্প লাইন</string>
 
 </resources>

@@ -3,8 +3,10 @@ package com.therishideveloper.smartbera
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -12,11 +14,13 @@ import androidx.core.view.GravityCompat
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.therishideveloper.smartbera.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     /*   private static final String ONESIGNAL_APP_ID = "f099ff64-4ea6-47a9-9067-2697df760571"; */
 
@@ -26,11 +30,14 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     private var toggle: ActionBarDrawerToggle? = null
+//    private val mainMenuViewModel by viewModels<MainMenuViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initMainMenu()
 
         /*
 //===============================PUSH NOTIFICATION=====================================//
@@ -94,7 +101,8 @@ class MainActivity : AppCompatActivity() {
                             "\nLet me recommend you this application\n\n"
                         /*
     //         shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
-    */shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+    */
+                        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
                         startActivity(Intent.createChooser(shareIntent, "choose one"))
                     } catch (e: Exception) {
                     }
@@ -132,107 +140,137 @@ class MainActivity : AppCompatActivity() {
         imageList.add(SlideModel(R.drawable.magura6, ScaleTypes.FIT))
         binding.imageSlider.setImageList(imageList)
 
-        binding.Button1.setOnClickListener {
-            //Button 1
-            val nextActivity = Intent(this@MainActivity, Service_1::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button2.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_2::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button3.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_3::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button4.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_4::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button5.setOnClickListener {
-            val nextActivity = Intent(
-                this@MainActivity,
-                Doctor_list::class.java
-            )
-            startActivity(nextActivity)
-        }
-        binding.Button6.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_5::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button7.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_6::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button8.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_7::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button9.setOnClickListener {
-            Toast.makeText(this@MainActivity, "শীঘ্রই আসছে", Toast.LENGTH_LONG).show()
-        }
-        binding.Button10.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_9::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button11.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_10::class.java)
-            startActivity(nextActivity)
-        }
+//        binding.Button1.setOnClickListener {
+//            //Button 1
+//            val nextActivity = Intent(this@MainActivity, Service_1::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button2.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_2::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button3.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_3::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button4.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_4::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button5.setOnClickListener {
+//            val nextActivity = Intent(
+//                this@MainActivity,
+//                Doctor_list::class.java
+//            )
+//            startActivity(nextActivity)
+//        }
+//        binding.Button6.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_5::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button7.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_6::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button8.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_7::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button9.setOnClickListener {
+//            Toast.makeText(this@MainActivity, "শীঘ্রই আসছে", Toast.LENGTH_LONG).show()
+//        }
+//        binding.Button10.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_9::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button11.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_10::class.java)
+//            startActivity(nextActivity)
+//        }
+//
+//        binding.Button12.setOnClickListener {
+//            val nextActivity = Intent(this@MainActivity, Service_11::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button13.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://www.foodpanda.com.bd/city/pabna"
+//            Web_browser.WEBSITE_TITLE = "রেস্টুরেন্ট"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+//        binding.Button14.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://www.shohoz.com/bus-tickets"
+//            Web_browser.WEBSITE_TITLE = "বাস টিকেট"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+//        binding.Button15.setOnClickListener {
+//            Toast.makeText(
+//                this@MainActivity,
+//                "শীঘ্রই আসছে",
+//                Toast.LENGTH_LONG
+//            ).show()
+//        }
+//        binding.Button16.setOnClickListener {
+//            //Button 16
+//            val nextActivity = Intent(this@MainActivity, Service_12::class.java)
+//            startActivity(nextActivity)
+//        }
+//        binding.Button17.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://bera.pabna.gov.bd/"
+//            Web_browser.WEBSITE_TITLE = "বেড়া উপজেলা পরিচিতি স্থানসমূহ"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+//        binding.Button18.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://www.facebook.com/groups/189051940792725/"
+//            Web_browser.WEBSITE_TITLE = "Flat Booking.com"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+//        binding.Button19.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://razibofficial.blogspot.com/?m=1"
+//            Web_browser.WEBSITE_TITLE = "আপডেট নিউজ"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+//        binding.Button20.setOnClickListener {
+//            Web_browser.WEBSITE_LINK = "https://www.facebook.com/groups/192841586705079"
+//            Web_browser.WEBSITE_TITLE = "চাকরির খবর"
+//            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
+//            startActivity(myIntent)
+//        }
+    }
 
-        binding.Button12.setOnClickListener {
-            val nextActivity = Intent(this@MainActivity, Service_11::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button13.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://www.foodpanda.com.bd/city/pabna"
-            Web_browser.WEBSITE_TITLE = "রেস্টুরেন্ট"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
-        }
-        binding.Button14.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://www.shohoz.com/bus-tickets"
-            Web_browser.WEBSITE_TITLE = "বাস টিকেট"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
-        }
-        binding.Button15.setOnClickListener {
-            Toast.makeText(
-                this@MainActivity,
-                "শীঘ্রই আসছে",
-                Toast.LENGTH_LONG
-            ).show()
-        }
-        binding.Button16.setOnClickListener {
-            //Button 16
-            val nextActivity = Intent(this@MainActivity, Service_12::class.java)
-            startActivity(nextActivity)
-        }
-        binding.Button17.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://bera.pabna.gov.bd/"
-            Web_browser.WEBSITE_TITLE = "বেড়া উপজেলা পরিচিতি স্থানসমূহ"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
-        }
-        binding.Button18.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://www.facebook.com/groups/189051940792725/"
-            Web_browser.WEBSITE_TITLE = "Flat Booking.com"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
-        }
-        binding.Button19.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://razibofficial.blogspot.com/?m=1"
-            Web_browser.WEBSITE_TITLE = "আপডেট নিউজ"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
-        }
-        binding.Button20.setOnClickListener {
-            Web_browser.WEBSITE_LINK = "https://www.facebook.com/groups/192841586705079"
-            Web_browser.WEBSITE_TITLE = "চাকরির খবর"
-            val myIntent = Intent(this@MainActivity, Web_browser::class.java)
-            startActivity(myIntent)
+    private fun initMainMenu() {
+        val adapter = MainMenuAdapter(::onMenuClicked)
+        binding.mainMenuRv.adapter = adapter
+        adapter.submitList(MainMenuViewModel().getMainMenus(this))
+
+//        mainMenuViewModel.dataList.observe(this) {
+//            adapter.submitList(it)
+//        }
+    }
+
+    private fun onMenuClicked(mainMenu: MainMenu) {
+        if (mainMenu.id == 1) {
+            changePage()
+//            findNavController().navigate(R.id.dashboardFragment)
+        } else if (mainMenu.id == 2) {
+//            findNavController().navigate(R.id.todayPlanFragment)
+        } else if (mainMenu.id == 3) {
+//            startActivity(Intent(activity, CollectionTypeActivity::class.java))
+        } else if (mainMenu.id == 6) {
+//            startActivity(Intent(activity, KhanaListActivity::class.java))
+        } else if (mainMenu.id == 7) {
+//            findNavController().navigate(R.id.profileFragment)
         }
     }
+
+    private fun changePage() {
+
+    }
+
 
     private var mBackPressed: Long = 0
 
