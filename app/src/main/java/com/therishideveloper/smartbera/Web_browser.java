@@ -98,9 +98,7 @@ public class Web_browser extends AppCompatActivity {
         webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
         webView.getSettings().setDomStorageEnabled(true);
 
-        if (Build.VERSION.SDK_INT >= 19) {
-            webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        }
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
         webView.getSettings().setUserAgentString(getString(R.string.app_name));
 
