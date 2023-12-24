@@ -254,21 +254,133 @@ class MainActivity : AppCompatActivity() {
 
     private fun onMenuClicked(mainMenu: MainMenu) {
         if (mainMenu.id == 1) {
-            changePage()
-//            findNavController().navigate(R.id.dashboardFragment)
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.summary_cyber_bolling)
+            )
         } else if (mainMenu.id == 2) {
-//            findNavController().navigate(R.id.todayPlanFragment)
+            changePage(
+                getString(R.string.link_female_torture),
+                getString(R.string.female_torture),
+                getString(R.string.summary_female_torture)
+            )
         } else if (mainMenu.id == 3) {
-//            startActivity(Intent(activity, CollectionTypeActivity::class.java))
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 4) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 5) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
         } else if (mainMenu.id == 6) {
-//            startActivity(Intent(activity, KhanaListActivity::class.java))
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
         } else if (mainMenu.id == 7) {
-//            findNavController().navigate(R.id.profileFragment)
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 8) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 9) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 10) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 11) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 12) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 13) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 14) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 15) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 16) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 18) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 19) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
+        } else if (mainMenu.id == 20) {
+            changePage(
+                getString(R.string.link_cyber_bolling),
+                getString(R.string.cyber_bolling),
+                getString(R.string.cyber_bolling)
+            )
         }
     }
 
-    private fun changePage() {
-
+    private fun changePage(link: String, title: String, summary: String) {
+        Web_browser.WEBSITE_LINK = link
+        Web_browser.WEBSITE_TITLE = title
+        startActivity(
+            Intent(this, CyberBollingActivity::class.java)
+                .putExtra("TITLE", "" + title)
+                .putExtra(
+                    "SUMMARY",
+                    "" + summary
+                )
+        )
     }
 
 
