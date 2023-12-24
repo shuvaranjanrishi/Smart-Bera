@@ -267,75 +267,75 @@ class MainActivity : AppCompatActivity() {
             )
         } else if (mainMenu.id == 3) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_depression_and_emotional_release),
+                getString(R.string.depression_and_emotional_release),
+                getString(R.string.summary_depression_and_emotional_release)
             )
         } else if (mainMenu.id == 4) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_carrier_thought),
+                getString(R.string.carrier_thought),
+                getString(R.string.summary_carrier_thought)
             )
         } else if (mainMenu.id == 5) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_university_admission),
+                getString(R.string.university_admission),
+                getString(R.string.summary_university_admission)
             )
         } else if (mainMenu.id == 6) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_business_online_ad),
+                getString(R.string.business_online_ad),
+                getString(R.string.summary_business_online_ad)
             )
         } else if (mainMenu.id == 7) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_passed_ssc_hsc),
+                getString(R.string.passed_ssc_hsc),
+                getString(R.string.summary_passed_ssc_hsc)
             )
         } else if (mainMenu.id == 8) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_islamic_question),
+                getString(R.string.islamic_question),
+                getString(R.string.summary_islamic_question)
             )
         } else if (mainMenu.id == 9) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_humanitarian_appeal),
+                getString(R.string.humanitarian_appeal),
+                getString(R.string.summary_humanitarian_appeal)
             )
         } else if (mainMenu.id == 10) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_spoken_english),
+                getString(R.string.spoken_english),
+                getString(R.string.summary_spoken_english)
             )
         } else if (mainMenu.id == 11) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_known_unknown_and_science),
+                getString(R.string.known_unknown_and_science),
+                getString(R.string.summary_known_unknown_and_science)
             )
         } else if (mainMenu.id == 12) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_inspirational),
+                getString(R.string.inspirational),
+                getString(R.string.summary_inspirational)
             )
         } else if (mainMenu.id == 13) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_life_oriented_thinking),
+                getString(R.string.life_oriented_thinking),
+                getString(R.string.summary_life_oriented_thinking)
             )
         } else if (mainMenu.id == 14) {
             changePage(
-                getString(R.string.link_cyber_bolling),
-                getString(R.string.cyber_bolling),
-                getString(R.string.cyber_bolling)
+                getString(R.string.link_health_care),
+                getString(R.string.health_care),
+                getString(R.string.summary_health_care)
             )
         } else if (mainMenu.id == 15) {
             changePage(
