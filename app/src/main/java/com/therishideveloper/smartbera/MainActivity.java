@@ -107,77 +107,48 @@ public class MainActivity extends AppCompatActivity {
         // Drawar click event
         // Drawer item Click event ------
         navigationView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.Developer) {
+                Intent nextActivity = new Intent(MainActivity.this, Developer.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("VAL", 100);
+                nextActivity.putExtras(bundle);
+                startActivity(nextActivity);
 
-            switch (item.getItemId()) {
-                case R.id.Developer:
+                drawerLayout.closeDrawers();
+            } else if (itemId == R.id.mAbout) {
+                Intent nextActivity1 = new Intent(MainActivity.this, About_app.class);
+                Bundle bundle1 = new Bundle();
+                bundle1.putInt("VAL", 0);
+                nextActivity1.putExtras(bundle1);
+                startActivity(nextActivity1);
 
-                    Intent nextActivity = new Intent(MainActivity.this, Developer.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("VAL", 100);
-                    nextActivity.putExtras(bundle);
-                    startActivity(nextActivity);
+                drawerLayout.closeDrawers();
+            } else if (itemId == R.id.mShare) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
+                    String shareMessage = "\nLet me recommend you this application\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+                } catch (Exception e) {
+                    //e.toString();
+                }
+                drawerLayout.closeDrawers();
+            } else if (itemId == R.id.mExit) {
+                new AlertDialog.Builder(MainActivity.this).setIcon(R.drawable.warning).setTitle("বাহির!")
+                        .setMessage("আপনি কি বের হতে চান?")
+                        .setPositiveButton("হ্যাঁ", (dialog, which) -> {
 
-                    drawerLayout.closeDrawers();
-                    break;
+                            Intent intent = new Intent(Intent.ACTION_MAIN);
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
 
-                case R.id.mAbout:
-                    Intent nextActivity1 = new Intent(MainActivity.this, About_app.class);
-                    Bundle bundle1 = new Bundle();
-                    bundle1.putInt("VAL", 0);
-                    nextActivity1.putExtras(bundle1);
-                    startActivity(nextActivity1);
+                        }).setNegativeButton("না", null).show();
 
-                    drawerLayout.closeDrawers();
-                    break;
-
-                /*case R.id.mRate:
-
-                    try {
-                        Uri uri = Uri.parse("market://details?id="+getPackageName()+"");
-                        Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(goMarket);
-                    }catch (ActivityNotFoundException e){
-                        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName()+"");
-                        Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
-                        startActivity(goMarket);
-                    }
-                    drawerLayout.closeDrawers();
-                    break;*/
-
-                case R.id.mShare:
-
-                    try {
-                        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                        shareIntent.setType("text/plain");
-                        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                        String shareMessage = "\nLet me recommend you this application\n\n";
-/*
-//IMRAN                          shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
-*/
-                        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-                        startActivity(Intent.createChooser(shareIntent, "choose one"));
-                    } catch (Exception e) {
-                        //e.toString();
-                    }
-                    drawerLayout.closeDrawers();
-                    break;
-
-                case R.id.mExit:
-
-                    new AlertDialog.Builder(MainActivity.this).setIcon(R.drawable.warning).setTitle("বাহির!")
-                            .setMessage("আপনি কি বের হতে চান?")
-                            .setPositiveButton("হ্যাঁ", (dialog, which) -> {
-
-                                Intent intent = new Intent(Intent.ACTION_MAIN);
-                                intent.addCategory(Intent.CATEGORY_HOME);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-
-                            }).setNegativeButton("না", null).show();
-
-                    drawerLayout.closeDrawers();
-                    break;
-
+                drawerLayout.closeDrawers();
             }
 
             return false;
