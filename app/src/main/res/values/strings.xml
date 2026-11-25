@@ -3,6 +3,7 @@
 
     <string name="open"></string>
     <string name="close"></string>
+    <string name="app_version_format">ভার্সন: %1$s</string>
 
 <!--    <string name="Ads_Control_Url">https://www.linkedin.com/in/md-imran-hossain-82a494263/</string>-->
 

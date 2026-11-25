@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -256,7 +257,12 @@ public class Web_browser extends AppCompatActivity {
                 }
             };
 
-            registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+            ContextCompat.registerReceiver(
+                    Web_browser.this,
+                    onComplete,
+                    new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE),
+                    ContextCompat.RECEIVER_EXPORTED
+            );
 
         });
         builder.setNegativeButton("NOT NOW", (dialog, which) -> {

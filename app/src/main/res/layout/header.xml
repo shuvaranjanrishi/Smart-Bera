@@ -78,6 +78,18 @@
                 android:layout_marginLeft="10dp"
                 />
 
+            <TextView
+                android:id="@+id/tv_drawer_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/regular"
+                android:gravity="left"
+                android:text="ভার্সন: 1.0.1"
+                android:textColor="#E6F1F0EF"
+                android:textSize="12sp" />
+
         </LinearLayout>
 
     </LinearLayout>

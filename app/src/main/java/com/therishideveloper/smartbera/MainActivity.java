@@ -1,7 +1,12 @@
 package com.therishideveloper.smartbera;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -98,6 +103,19 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_View);
         imageMenu = findViewById(R.id.imageMenu);
 
+        View headerView = navigationView.getHeaderView(0);
+        if (headerView != null) {
+            TextView tvDrawerVersion = headerView.findViewById(R.id.tv_drawer_version);
+            if (tvDrawerVersion != null) {
+                try {
+                    PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+                    tvDrawerVersion.setText(getString(R.string.app_version_format, pInfo.versionName));
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
 
         toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -124,12 +142,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(nextActivity1);
 
                 drawerLayout.closeDrawers();
+            } else if (itemId == R.id.mRate) {
+                try {
+                    Uri uri = Uri.parse("market://details?id=" + getPackageName());
+                    Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(goMarket);
+                } catch (ActivityNotFoundException e) {
+                    Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName());
+                    Intent goMarket = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(goMarket);
+                }
+                drawerLayout.closeDrawers();
             } else if (itemId == R.id.mShare) {
                 try {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                    String shareMessage = "\nLet me recommend you this application\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+                    String shareMessage = "\n" + getString(R.string.app_name) + " অ্যাপটি ডাউনলোড করুন:\n\n"
+                            + "https://play.google.com/store/apps/details?id=" + getPackageName() + "\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "choose one"));
                 } catch (Exception e) {
